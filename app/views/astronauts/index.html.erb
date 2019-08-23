@@ -1,10 +1,10 @@
 <section id="astronaut-index"
 <% @astronauts.each do |astronaut| %>
-<%# <%= binding.pry %> %>
-<section id= "astronaut-info-<%=astronaut.id%>">
-  <h2> <%= astronaut.name %></h2>
-  <h2> <%= astronaut.age %></h2>
-  <h2> <%= astronaut.job %></h2>
+<section id= "astronaut-info-<%= astronaut.id%>">
+  <h3> <%= astronaut.name %></h3>
+  <h3> <%= astronaut.age %></h3>
+  <h3> <%= astronaut.job %></h3>
   </section>
 <% end %>
+<h2><%= @astronauts.average_age.round(2) %><h2>
 </section>

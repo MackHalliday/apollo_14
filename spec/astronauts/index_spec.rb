@@ -29,11 +29,13 @@ describe "astronauts index page" do
   end
 
   it "can show average astronaut age" do
-    @astronaut_1 = Astronaut.create!(name: "Jane", age: 40, job: "Pilot")
-    @astronaut_2 = Astronaut.create!(name: "Emily", age: 35, job: "Co-Pilot")
-    @astronaut_3 = Astronaut.create!(name: "Sam", age: 38, job: "Rocket Specialist")
+    astronaut_1 = Astronaut.create!(name: "Jane", age: 40, job: "Pilot")
+    astronaut_2 = Astronaut.create!(name: "Emily", age: 35, job: "Co-Pilot")
+    astronaut_3 = Astronaut.create!(name: "Sam", age: 38, job: "Rocket Specialist")
 
-    within "#astronaut-index"" do
+    visit "/astronauts"
+
+    within "#astronaut-index" do
       expect(page).to have_content(37.67)
     end
   end
