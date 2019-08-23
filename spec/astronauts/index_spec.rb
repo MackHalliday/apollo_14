@@ -2,14 +2,13 @@
 require "rails_helper"
 
 describe "astronauts index page" do
-  before :each do
-    astronaut_1 = Astronaut.create(name: "Jane", age: 40, job: "Pilot")
-    astronaut_2 = Astronaut.create(name: "Emily", age: 35, job: "Co-Pilot")
-    astronaut_3 = Astronaut.create(name: "Sam", age: 38, job: "Rocket Specialist")
 
-  end
 
   it "should show all astronauts" do
+    @astronaut_1 = Astronaut.create!(name: "Jane", age: 40, job: "Pilot")
+    @astronaut_2 = Astronaut.create!(name: "Emily", age: 35, job: "Co-Pilot")
+    @astronaut_3 = Astronaut.create!(name: "Sam", age: 38, job: "Rocket Specialist")
+
     visit "/astronauts"
 
     within "#astronaut-info-#{@astronaut_1.id}" do
